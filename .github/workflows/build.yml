@@ -790,6 +790,7 @@ jobs:
         linux-cross-aarch64,
         macos,
         linux-cross-windows,
+        msys2,
         test-toolchain,
         linux-test-cross-build-ffmpeg,
         test-ffmpeg,
