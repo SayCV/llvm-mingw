@@ -781,7 +781,7 @@ jobs:
           make -j$(nproc) fate
 
   upload-nightly:
-    if: false && github.event_name == 'schedule'
+    if: github.event_name == 'schedule'
     permissions:
       contents: write
     needs:
@@ -803,7 +803,7 @@ jobs:
           rm -rf linux-asserts*
           rm -rf msys2*
           rm -rf linux-stage1-*
-          # rm -rf macos-llvm*
+          rm -rf macos-llvm*
           rm -rf profile*
           mv *-toolchain/*.zip *-toolchain/*.tar.xz .
       - name: Upload binaries
