@@ -45,7 +45,7 @@ jobs:
       - name: Rearrange files
         run: |
           rm -rf linux-asserts*
-          rm -rf msys2*
+          #rm -rf msys2*
           rm -rf linux-stage1-*
           rm -rf macos-llvm*
           mv *-toolchain/*.zip . || true
