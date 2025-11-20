@@ -806,7 +806,7 @@ jobs:
           rm -rf linux-stage1-*
           rm -rf macos-llvm*
           rm -rf profile*
-          mv *-toolchain/*.zip *-toolchain/*.tar.xz .
+          mv *-toolchain/*.zip *-toolchain/*.tar.xz . || true
       - name: Upload binaries
         env:
           GITHUB_TOKEN: ${{github.token}}

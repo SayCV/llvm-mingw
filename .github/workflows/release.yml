@@ -3,26 +3,26 @@ on:
   workflow_dispatch:
     inputs:
       ref:
-        description: 'Ref to extract from'
+        description: "Ref to extract from"
         type: string
-        default: 'master'
+        default: "master"
       tag:
-        description: 'Tag to create/upload to'
+        description: "Tag to create/upload to"
         required: true
         type: string
       title:
-        description: 'Release title'
+        description: "Release title"
         type: string
       make_tag:
-        description: 'Make a tag'
+        description: "Make a tag"
         type: boolean
         default: true
       create_release:
-        description: 'Create release'
+        description: "Create release"
         type: boolean
         default: true
       prerelease:
-        description: 'Set as pre-release'
+        description: "Set as pre-release"
         type: boolean
         default: false
 
@@ -48,7 +48,7 @@ jobs:
           rm -rf msys2*
           rm -rf linux-stage1-*
           rm -rf macos-llvm*
-          mv *-toolchain/*.zip *-toolchain/*.tar.xz .
+          mv *-toolchain/*.zip *-toolchain/*.tar.xz . || true
       - name: Set environment
         run: |
           cat parameters/parameters.txt >> $GITHUB_ENV
