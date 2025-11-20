@@ -48,7 +48,8 @@ jobs:
           rm -rf msys2*
           rm -rf linux-stage1-*
           rm -rf macos-llvm*
-          mv *-toolchain/*.zip *-toolchain/*.tar.xz . || true
+          mv *-toolchain/*.zip . || true
+          mv *-toolchain/*.tar.xz . || true
       - name: Set environment
         run: |
           cat parameters/parameters.txt >> $GITHUB_ENV
